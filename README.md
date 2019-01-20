@@ -35,6 +35,9 @@ You'll get following files:
 cfssl print-defaults csr > client.json
 ```
 Edit client.json
+```
+cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=client client.json | cfssljson -bare server
+```
 You'll get following files:
  - client-key.pem 
  - client.csr 
